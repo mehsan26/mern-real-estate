@@ -1,20 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage('Build Backend') {
+        stage('Build api') {
             steps {
                 dir('api') {
                     script {
-                        docker.build('mern-backend', '.')
+                        docker.build('mern-api', '.')
                     }
                 }
             }
         }
-        stage('Build Frontend') {
+        stage('Build client') {
             steps {
                 dir('client') {
                     script {
-                        docker.build('mern-frontend', '.')
+                        docker.build('mern-client', '.')
                     }
                 }
             }
