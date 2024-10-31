@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Backend') {
             steps {
-                dir('backend') {
+                dir('api') {
                     script {
                         docker.build('mern-backend', '.')
                     }
@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build Frontend') {
             steps {
-                dir('frontend') {
+                dir('client') {
                     script {
                         docker.build('mern-frontend', '.')
                     }
